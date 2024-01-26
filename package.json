@@ -1,0 +1,21 @@
+{
+  "name": "template-auth-thunk-creator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd server & npm i",
+    "install-client": "cd client & npm i",
+    "install": "npm run install-server & npm run install-client",
+    "start-client": "cd client & npm run dev",
+    "start-server": "cd server/src & node index.js",
+    "start": "concurrently \"npm run start-client\" \"npm run start-server\""
+  },
+  "author": "Akimba <akimba@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "i": "^0.3.7",
+    "npm": "^9.8.0"
+  }
+}

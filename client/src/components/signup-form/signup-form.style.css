@@ -1,0 +1,96 @@
+.auth-form {
+  width: 40%;
+  margin: 0 auto;
+  padding: 0 45px 30px;
+
+  box-shadow: 4px 4px 10px 0 var(--shadow-color);
+
+  transition: opacity 0.3s ease;
+}
+
+.auth-form:has(:disabled) {
+  opacity: 0.4;
+}
+
+.auth-form__group {
+  align-items: center;
+
+  margin: 0;
+  padding: 55px 0 20px;
+  border: none;
+}
+
+.auth-form__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.auth-form__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+
+  margin-bottom: 35px;
+}
+
+.auth-form__input {
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--shadow-color);
+
+  border-radius: 5px;
+  font-size: inherit;
+}
+
+.auth-form__error-field {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  grid-column: 2 / -1;
+
+  font-style: italic;
+  color: var(--error-color);
+}
+
+.auth-form__submit-button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  padding: 8px 70px;
+  border: none;
+
+  font-size: inherit;
+  color: var(--alternative-text-color);
+  background-color: var(--main-theme-color);
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: opacity 0.5s ease;
+}
+
+.auth-form__submit-button:hover {
+  opacity: 0.7;
+}
+
+.auth-form__submit-button:disabled {
+  cursor: default;
+}
+
+.auth-form__submit-button--rejected {
+  animation-name: shake;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-delay: 0.1s;
+}
+
+@keyframes shake {
+  15%, 45%, 75%  {
+    transform: translateX(-4px);
+  }
+  30%, 60%, 90%  {
+    transform: translateX(4px);
+  }
+}
