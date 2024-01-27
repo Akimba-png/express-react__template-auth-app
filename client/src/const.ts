@@ -1,7 +1,10 @@
 import { User } from './models/user';
 
+export const BASE_URL = import.meta.env.PROD
+  ? 'https://express-template-auth-app.onrender.com'
+  : 'http://localhost:5000';
+
 export enum ApiRoute {
-  BaseUrl = 'http://localhost:5000',
   Signup = '/auth/signup',
   Login = '/auth/login',
   Logout = '/auth/logout',

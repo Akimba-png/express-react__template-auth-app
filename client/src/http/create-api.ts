@@ -5,12 +5,12 @@ import axios, {
 } from 'axios';
 import { tokenService } from '../services/token-service';
 import { User } from '../models/user';
-import { ApiRoute } from '../const';
+import { ApiRoute, BASE_URL } from '../const';
 import { toastService } from '../services/toast-service';
 
 export const createApi = (onUnAuth: () => void) => {
   const api = axios.create({
-    baseURL: ApiRoute.BaseUrl,
+    baseURL: BASE_URL,
     timeout: 3000,
     withCredentials: true,
   });
@@ -36,7 +36,7 @@ export const createApi = (onUnAuth: () => void) => {
       try {
         const accessToken = (
           await axios.get<User>(
-            `${ApiRoute.BaseUrl}${ApiRoute.Refresh}`,
+            `${BASE_URL}${ApiRoute.Refresh}`,
             {withCredentials: true}
           )
         ).data.accessToken;
